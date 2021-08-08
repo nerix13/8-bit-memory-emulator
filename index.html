@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>eventos</title>
+	<style>
+		body {
+			color: white;
+			background-color: #222222;
+		}
+		
+		#monitor {
+			background-color: black;
+			width: 20rem;
+			height: 20rem;
+			padding: 0.50rem;
+		}
+		
+		textarea {
+			background-color: #222222;
+			color: white;
+			border: 1px solid white;
+		}
+		
+		input {
+			background-color: #222222;
+			color: white;
+			border: 1px solid white;
+		}
+
+	</style>
+</head>
+<body>
+
+	<h1 style="align-content: center;">8 bit Memory Emulator</h1>
+	<!--[ Monitor ]-->
+	<h1 style="align-self: center;">Monitor</h1>
+	<textarea  name="" id="monitor" cols="32" rows="32" readonly></textarea>
+	<br>
+	<div style="display: inline;">
+		<button id="reset-btn">Reset</button>
+		<button id="clear-monitor-btn">Clear monitor</button>
+		<button id="clear-mem-btn">Clear memory</button>
+	</div>
+	<hr>
+	<!--[ Print char ]-->
+	<h2>Print a char by address</h2>
+	<label for="char-address">Memory address [0000/ffff]: </label>
+	<input type="text" maxlength="4" id="char-address">
+	<button id="print-char-btn">Print char</button>
+	<br><br>
+	<!--[ Print char string ]-->
+	<h2>Print a char string by range</h3>
+	<label for="charstartrange">Start range[0000/ffff]: </label>
+	<input name="charstartrange" type="text" maxlength="4" id="chars-start-range">
+	<label for="charendrange">End range[0000/ffff]: </label>
+	<input name="charendrange" type="text" maxlength="4" id="chars-end-range">
+	<button id="print-char-string-btn">Print string</button>
+	<br>
+	<br>
+	<hr>
+	<!--[ Memory monitor ]-->
+	<h1 style="align-self: center;">Memory monitor</h1>
+	<textarea name="memory-monitor" id="memory-monitor" cols="50" rows="10" readonly></textarea>
+	<br>
+	<!--[ Memory monitor range inputs ]-->
+	<label for="start-mem-range">Start range [0000/ffff]: </label>
+	<input type="text"id="start-mem-range" maxlength="4"  default=0>
+	<label for="end-mem-range">End range [0000/ffff]: </label>
+	<input type="text" id="end-mem-range" maxlength="4" default=0>	
+	<button id="show-mem-range-btn">Show memory range</button>
+	<br>
+	<hr>
+	<!--[ Memory modify inputs ]-->
+	<h1>Write control</h1>
+	<label for="mem-addr">Memory address[0000/ffff]: </label>
+	<input name="mem-addr" type="text" maxlength="4" id="memory-address">
+	<label for="mem-addr-val">Memory address content[0/255]: </label>
+	<input name="mem-addr-val" type="number" min="0" max="255" maxlength="3" id="memory-address-value">
+	<button id="write-on-mem-btn">Write</button>
+
+
+	
+
+
+	<script src="index.js"></script>
+	
+
+</body>
+</html>
